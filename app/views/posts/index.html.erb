@@ -1,0 +1,10 @@
+<h1>Blog Posts</h1>
+
+<% @posts.sort.each do |post| %>
+  <div class="bg-light mb-3 p-2">
+    <h3><%= post.title %></h3>
+    <p><%= post.body %></p>
+    <%= link_to 'Read More', post_path(post), :class => 'btn btn-outline-secondary' %>
+  </div>
+<% end %>
+
