@@ -1,22 +1,16 @@
-<!-- HEADER -->
-<header class="main-header py-2">
-  <div class="">
-    <div class="row">
-      <div class="col">
-        <div class="text-center">
-          <h1><%= link_to 'Borderline Basic', home_path %></h1>
-          <p>The chronicles of a Borderline Basic B*tch</p>
-        </div>
+<%= render "shared/banner" %>
+<div class="row">
+  <div class="col">
+    <div class="d-flex justify-content-around">
+      <div class="home-posts">
+        <% @posts.sort.reverse.each do |post| %>
+          <div class="individual-post mt-5 mb-5 pt-5 pb-5">
+            <h3 class="post-title"><%= link_to post.title , post_path(post), {:class => 'header' } %></h3>
+            <p class="post-text"><%= post.body %></p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</header>
-
-
-<% @posts.sort.reverse.each do |post| %>
-  <div class="bg-light mb-3 p-2">
-    <h3><%= link_to post.title , post_path(post)%></h3>
-    <p><%= post.body %></p>
-  </div>
-<% end %>
+</div>
 

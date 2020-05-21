@@ -1,0 +1,26 @@
+.main-header {
+  padding-top: 46px;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: $title-font;
+  font-size: 60px;
+  line-height: 108px;
+  text-decoration: none;
+  color:#222222;
+
+  &:hover {
+    text-decoration: none;
+    color:#222222;
+  }
+}
+
+.sub-title {
+  font-family: $sub-title-font;
+  font-size: 11px !important;
+  line-height: 24px;
+  font-weight: 300;
+  letter-spacing: 0.26px;
+  color:#222222;
+}

@@ -1,0 +1,24 @@
+body {
+  letter-spacing: 0.2px;
+  word-break: break-word;
+
+  
+
+  h3 .header {
+    font-size: 23px;
+    text-decoration: none;
+    color: $black;
+
+    &:hover{
+      text-decoration: none;
+      color: $black;
+    }
+  }
+
+  .post-text{
+    color: $main-gray;
+    font-size: 13.33px;
+    line-height: 180% !important;
+  }
+}
+
