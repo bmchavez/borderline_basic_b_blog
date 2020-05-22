@@ -4,7 +4,7 @@
   <div class="text-center">
     <h3><%= @post.title %></h3>
   </div>
-    <p class="post-text"><%= @post.body%></p>
+    <p class="post-text"><%= raw @post.body%></p>
   <hr>
   <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-outline-primary'%>
   <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, :class => 'btn btn-outline-danger'%>

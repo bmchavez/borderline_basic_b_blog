@@ -6,7 +6,7 @@
         <% @posts.sort.reverse.each do |post| %>
           <div class="individual-post mt-5 mb-5 pt-5 pb-5">
             <h3 class="post-title"><%= link_to post.title , post_path(post), {:class => 'header' } %></h3>
-            <p class="post-text"><%= post.body %></p>
+            <p class="post-text"><%= raw post.body %></p>
           </div>
         <% end %>
       </div>
