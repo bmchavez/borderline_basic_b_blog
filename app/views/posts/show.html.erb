@@ -1,18 +1,24 @@
 <%= render "shared/banner" %>
 
-<div>
-  <div class="text-center">
-    <h3><%= @post.title %></h3>
+<div class="row">
+  <div class="col">
+    <div class="d-flex justify-content-around">
+      <div class="home-posts">
+        <div class="text-center">
+          <h3><%= @post.title %></h3>
+        </div>
+        <div class="post-text">
+          <p><%= sanitize @post.body %></p>
+        </div>  
+        <hr>
+        <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-outline-primary'%>
+        <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, :class => 'btn btn-outline-danger'%>
+      
+        <hr>
+        <%= render 'comments/form' %>
+        <%= render 'comments/comments' %>
+      </div>
+    </div>
   </div>
-    <p class="post-text"><%= raw @post.body%></p>
-  <hr>
-  <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-outline-primary'%>
-  <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, :class => 'btn btn-outline-danger'%>
 
-  <hr>
-
-
-
-  <%= render 'comments/form' %>
-  <%= render 'comments/comments' %>
 </div>
