@@ -13,8 +13,9 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 
-# My other Gems
+# Authorization & Authentication
 gem 'devise'
+gem 'pundit'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'

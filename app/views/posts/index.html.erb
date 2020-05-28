@@ -3,7 +3,7 @@
   <div class="col">
     <div class="d-flex justify-content-around">
       <div class="home-posts">
-        <% @posts.sort.reverse.each do |post| %>
+        <% @posts.each do |post| %>
           <div class="individual-post mb-4 pb-5">
             <h3 class="post-title"><%= link_to post.title , post_path(post), {:class => 'header' } %></h3>
             <div class="post-text">

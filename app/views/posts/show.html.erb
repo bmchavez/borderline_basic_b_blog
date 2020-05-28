@@ -11,10 +11,14 @@
           <p><%= sanitize @post.body %></p>
         </div>  
         <hr>
-        <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-outline-primary'%>
-        <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, :class => 'btn btn-outline-danger'%>
-      
-        <hr>
+        <% if policy(@post).edit? %>
+          <%= link_to "Edit Post", edit_post_path(@post), :class => 'btn btn-outline-primary'%>
+        <% end %>
+        <% if policy(@post).destroy? %>
+          <%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, :class => 'btn btn-outline-danger'%>
+          <hr>
+        <% end %>
+
         <%= render 'comments/form' %>
         <%= render 'comments/comments' %>
       </div>

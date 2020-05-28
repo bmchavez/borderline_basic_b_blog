@@ -1,18 +1,26 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show] 
+  # before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   def index
-    @posts = Post.all
+    # @posts = policy_scope(Post)
+    @posts = policy_scope(Post).order(created_at: :desc)
   end
 
   def show
     @post = Post.find(params[:id])
+    authorize @post
   end
   
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
+    authorize @post
 
     if(@post.save)
       redirect_to @post
@@ -23,10 +31,12 @@ class PostsController < ApplicationController
   
   def edit
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   def update
     @post = Post.find(params[:id])
+    authorize @post
 
     if(@post.update(post_params))
       redirect_to @post
@@ -37,6 +47,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    authorize @post
     @post.destroy
 
     redirect_to posts_path
