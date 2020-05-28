@@ -5,8 +5,12 @@
     <div class="bg-light mb-3 p-2">
       <%= comment.username %>: 
         <%= comment.body %>
-        <%= link_to 'Delete', [comment.post, comment], method: :delete, data: {confirm: 'Are you sure you would like to delete your comment?'}, :class => 'btn btn-outline-danger' %>
-      
-    </div>
+        <% if policy(comment).edit? %>
+          <%= link_to "Edit Comment", [comment.post, comment], :class => 'btn btn-outline-primary'%>
+        <% end %>
+        <% if policy(comment).destroy? %>
+          <%= link_to 'Delete', [comment.post, comment], method: :delete, data: {confirm: 'Are you sure you would like to delete your comment?'}, :class => 'btn btn-outline-danger' %>
+        <% end %>
+      </div>
   <% end %>
 <% end %>

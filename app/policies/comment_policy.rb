@@ -5,18 +5,25 @@ class CommentPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    return true
+  end
+
+  def show?
+    return true
+  end
+
   def create?
     true
   end
 
-  # def update?
-  #   user_is_owner_or_admin?
-  # end
+  def update?
+    record.user == user
+  end
 
   def destroy?
     user_is_owner_or_admin?
   end
-
 
   private
 

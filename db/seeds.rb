@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Creating Seed Posts...'
+Post.create!({
+  title: "001.",
+  body: "This is the first blog post",
+  user_id: 2
+})
+Post.create!({
+  title: "002.",
+  body: "This is the SECOND blog post",
+  user_id: 2
+})
+puts 'Finished!'
