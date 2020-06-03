@@ -25,9 +25,10 @@ class CommentsController < ApplicationController
     authorize @comment
 
     if @comment.save
-      redirect_to post_path(@post)
+      redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
     else
-      render 'posts/show'
+      
+      redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
     end
   end
 
