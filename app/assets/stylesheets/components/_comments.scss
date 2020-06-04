@@ -1,0 +1,21 @@
+.comment-card a{
+  text-decoration: none !important;
+  color: $main-gray;
+  opacity: 0;
+  font-size: 13.33px;
+}
+
+.dropdown-item{
+  opacity: 1 !important;
+}
+
+.comment-card:hover a{
+  text-decoration: none !important;
+  opacity: .7;
+  transition-duration: .3s;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}

@@ -27,8 +27,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
     else
-      
-      redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
+      redirect_to post_path(@post, anchor: "comments")
     end
   end
 
@@ -44,7 +43,7 @@ class CommentsController < ApplicationController
     authorize @comment
 
     if(@comment.update(comment_params))
-      redirect_to @post
+      redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
     else
       render 'comments/_edit'
     end
@@ -56,7 +55,7 @@ class CommentsController < ApplicationController
     authorize @comment
     @comment.destroy
 
-    redirect_to post_path(@post)
+    redirect_to post_path(@post, anchor: "comments")
   end
 
   private
