@@ -20,6 +20,7 @@ gem 'omniauth-facebook'
 
 # Other Miscellaneous Gems
 gem 'dotenv-rails', groups: [:development, :test]
+# gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
