@@ -11,11 +11,12 @@ gem 'simple_form'
 # JavScript Gems
 gem 'ckeditor'
 gem 'carrierwave'
-gem 'mini_magick' 
+gem 'mini_magick'
 
 # Authorization & Authentication
 gem 'devise'
 gem 'pundit'
+gem 'omniauth-facebook'
 
 # Other Miscellaneous Gems
 gem 'dotenv-rails', groups: [:development, :test]
