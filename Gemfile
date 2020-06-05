@@ -11,7 +11,7 @@ gem 'simple_form'
 # JavScript Gems
 gem 'ckeditor'
 gem 'carrierwave'
-gem 'mini_magick'
+gem 'mini_magick' 
 
 # Authorization & Authentication
 gem 'devise'
