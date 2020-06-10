@@ -33,7 +33,10 @@
           <span class="col-5 align-middle"> <hr> </span>
         </div>        
 
-        <%= link_to " Log in with Facebook", omniauth_authorize_path(resource_name, :facebook), :class => "btn  fab fa-facebook-square bb-btn" %><br />
+        <%= link_to omniauth_authorize_path(resource_name, :facebook), :class => "btn btn-outline-primary bb-btn" do %>
+          <i class="fab fa-facebook-square "></i>
+          Log in with Facebook
+        <% end %>
         <%= render "devise/shared/links" %>
       </div>
   </div>
