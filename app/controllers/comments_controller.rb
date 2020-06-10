@@ -23,13 +23,16 @@ class CommentsController < ApplicationController
     @comment.post = @post
     @comment.user = @user
     authorize @comment
-
+    
     if @comment.save
       redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
+      
     else
-      redirect_to post_path(@post, anchor: "comments")
+      # redirect_to post_path(@post, anchor: "comments")
+      redirect_to home_path
     end
   end
+  
 
   def edit
     @post = Post.find(params[:post_id])
