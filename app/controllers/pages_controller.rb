@@ -11,18 +11,20 @@ class PagesController < ApplicationController
     @title = 'dashboard'
     @content = 'This your Dashboard!'
     @posts = policy_scope(Post).order(created_at: :desc)
-    # @post = Post.find(params[:id])
+    # # @post = Post.find(params[:id])
+
+    # authorize @page
   end
   
 
   private 
   
-  def post_params
-    params.require(:post).permit(:title, :body)
-  end
+  # def post_params
+  #   params.require(:post).permit(:title, :body)
+  # end
 
-  def set_user
-    @user ||= ((User.find(session[:user_id]) if session[:user_id]) || User.new)
-  end
+  # def set_user
+  #   @user ||= ((User.find(session[:user_id]) if session[:user_id]) || User.new)
+  # end
 
 end

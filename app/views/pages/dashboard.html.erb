@@ -12,11 +12,9 @@
             <h3 class="post-title"><%= link_to post.title , post_path(post), {:class => 'header' } %></h3>
             <div class="post-text">
               <div class="text-center">
-                <div  class="btn btn-sm btn-outline-primary"> <%= link_to 'Continue Reading', post_path(post), {:class => '' } %> </div>
+                <div  class="btn btn-sm btn-outline-primary"> <%= link_to 'View', post_path(post), {:class => '' } %> </div>
                 <div  class="btn btn-sm btn-outline-success"> <%= link_to 'Edit Post', edit_post_path(post), {:class => '' } %> </div>
                 <%= link_to "Delete Post", post_path(post), method: :delete, remote: true, data: {confirm: "Are you sure you would like to delete this post?"}, :class => 'btn btn-sm btn-outline-danger'%>
-                
-                
               </div>
             </div>  
           </div>

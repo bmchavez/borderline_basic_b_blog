@@ -14,7 +14,7 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    return true
   end
 
   def update?
@@ -28,6 +28,6 @@ class CommentPolicy < ApplicationPolicy
   private
 
   def user_is_owner_or_admin?
-    record.user == user || user.admin
+    record.user == user || user.try(:admin?)
   end
 end

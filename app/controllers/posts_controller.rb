@@ -50,7 +50,7 @@ class PostsController < ApplicationController
     authorize @post
     @post.destroy
 
-    redirect_to posts_path
+    redirect_to dashboard_path
   end
 
   private 
