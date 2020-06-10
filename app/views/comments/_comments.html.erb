@@ -5,20 +5,23 @@
 <% end %>
   
   <% @post.comments.reverse_each do |comment| %>
-    <div class="row align-items-center">
+    <div class="row align-items-center p-2">
       <div class="col">
-        <div id="comment-<%= comment.id %>" class="comment-card bg-light mb-3 p-2 d-flex justify-content-between">
+        <div id="comment-<%= comment.id %>" class="comment-card bg-light d-flex">
 
 
-          <div class="comment-body">
-            <p class="comment-user"><%= comment.user.first_name %> <%= comment.user.last_name %></p>
+          <div class="comment-body"  style="width: 100%">
+            <div class="row d-flex">
+              <p class="col-6 comment-user"><%= comment.user.first_name %> <%= comment.user.last_name %></p>
+              <p class="col-6 post-date text-right" ><%=  comment.created_at.strftime("%b %d, %Y") %></p>
+            </div>
             <p class="comment-text"><%= comment.body %></p> 
           </div>
           <% if policy(comment).edit? || policy(comment).destroy? %>
             <div class="dropdown show my-auto">
               <div class="col">
                 <div class="dropdown-icon">
-                  <a class="dropdown align-middle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="dropdown align-middle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-v"></i>
                   </a>
                 

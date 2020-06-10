@@ -11,6 +11,8 @@
           <div class="individual-post mb-4 pb-5">
             <h3 class="post-title"><%= link_to post.title , post_path(post), {:class => 'header' } %></h3>
             <div class="post-text">
+              <p>Created: <%=  post.created_at.strftime("%B %d, %Y") %></p>
+              
               <div class="text-center">
                 <div  class="btn btn-sm btn-outline-primary"> <%= link_to 'View', post_path(post), {:class => '' } %> </div>
                 <div  class="btn btn-sm btn-outline-success"> <%= link_to 'Edit Post', edit_post_path(post), {:class => '' } %> </div>

@@ -9,6 +9,7 @@
         </div>
         <div class="post-text mb-5">
           <p><%= sanitize @post.body %></p>
+          <p class="post-date" ><%=  @post.created_at.strftime("%B %d, %Y") %></p>
         </div>  
         <hr>
 

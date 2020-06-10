@@ -3,7 +3,10 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-<p>Don’t have an account?<%= link_to " Sign up", new_registration_path(resource_name) %></p><br />
+<div class="row d-flex sign-up-action">
+  <div class="col-6"> <p>Don’t have an account?</p> </div>
+  <div class="col-6"> <p><%= link_to " Sign up", new_registration_path(resource_name), :class => "btn btn-sm btn-outline-primary" %></p></div>
+</div>
 <% end %>
 
 <!-- <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

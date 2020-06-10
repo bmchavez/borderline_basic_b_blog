@@ -20,3 +20,20 @@
   }
 }
 
+.fb-btn{
+  color: #38539B;
+  font-size: 14px;
+
+  &:hover {
+    text-decoration: none !important;
+    color: #38539B;
+  }
+}
+
+.small-form-actions {
+  font-size: 12px;
+}
+
+.sign-up-action {
+  font-size: 14px;
+}
