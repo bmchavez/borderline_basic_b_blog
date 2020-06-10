@@ -7,22 +7,35 @@
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
+                    label: false,
                     required: false,
                     autofocus: true,
-                    placeholder: "email@gmail.com",
+                    placeholder: "Email",
                     input_html: { autocomplete: "email" } %>
         <%= f.input :password,
+                    label: false,
                     required: false,
-                    placeholder: "••••••",
+                    placeholder: "Password",
                     input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <div class="row d-flex">
+          <span class="col-6"><%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></span>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <span class="col-6 text-right"><%= link_to "Forgot password?", new_password_path(resource_name) %></span>
+          <% end %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", :class => "btn btn-outline-primary" %>
+        </div>
+        <% end %>
+        <div class="row d-flex justify-content-around py-3">
+          <span class="col-5 align-middle"> <hr> </span>
+          <span class="text-muted">or</span>
+          <span class="col-5 align-middle"> <hr> </span>
+        </div>        
+
+        <%= link_to " Log in with Facebook", omniauth_authorize_path(resource_name, :facebook), :class => "btn  fab fa-facebook-square bb-btn" %><br />
+        <%= render "devise/shared/links" %>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Log in", :class => "btn btn-outline-primary" %>
-      </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
-    </div>
   </div>
 </div>
 

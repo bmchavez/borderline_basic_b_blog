@@ -1,5 +1,6 @@
 .form-login {
   background: white;
+  font-family: serif !important;
   padding: 10px 20px;
   margin-top: 50px;
   border-radius: 3px;
@@ -9,9 +10,13 @@
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
+    font-family: Cormorant Garamond !important;
   }
   .btn {
     width: 100%;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: Cormorant Garamond !important;
   }
 }
+
