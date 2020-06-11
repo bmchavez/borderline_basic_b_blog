@@ -1,9 +1,9 @@
 <%= render "shared/banner" %>
 
 <div class="row d-flex justify-content-center">
-  <div class="col-sm-4 col-md-5">
+  <div class="col-sm-12 col-md-8 col-lg-5">
     <div class="form-login">
-      <h2 class="text-center">Sign up</h2>
+      <h2 class="text-center pt-3">Sign up</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
@@ -39,7 +39,7 @@
                     input_html: { autocomplete: "new-password" } %>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", :class => "btn btn-outline-primary" %>
+        <%= f.button :submit, "Sign up", :class => "btn btn-primary" %>
       </div>
       <% end %>
       <div class="row d-flex justify-content-around">
@@ -47,7 +47,10 @@
         <span class="text-muted">or</span>
         <span class="col-5 align-middle"> <hr> </span>
       </div>        
-      <%= link_to " Log in with Facebook", omniauth_authorize_path(resource_name, :facebook), :class => "btn  fab fa-facebook-square" %><br />
+      <%= link_to omniauth_authorize_path(resource_name, :facebook), :class => "btn fb-btn" do %>
+        <i class="fab fa-facebook-square"></i>
+        Log in with Facebook
+      <% end %>
       <%= render "devise/shared/links" %>
     </div>
   </div>

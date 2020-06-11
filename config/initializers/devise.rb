@@ -5,6 +5,8 @@
 Devise.setup do |config|
   # Facebook OmniAUTH
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
+    # "264364638130206", "8d7000a448f0a89e4bd88fd45f749912",
+    # ENV["FB_ID"], ENV["FB_SECRET"],
     scope: 'email',
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio

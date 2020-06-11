@@ -1,5 +1,7 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <div class="row d-flex sign-up-action">
+    <div class="col-6"> <p>Already have an account?</p> </div>
+    <div class="col-6"> <p><%= link_to "Log in", new_session_path(resource_name), :class => "btn btn-sm btn-outline-primary" %></p></div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
