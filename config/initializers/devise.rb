@@ -4,7 +4,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   # Facebook OmniAUTH
-  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
+  config.omniauth :facebook, ENV['FB_ID'], ENV['FB_SECRET'],
     # "264364638130206", "8d7000a448f0a89e4bd88fd45f749912",
     # ENV["FB_ID"], ENV["FB_SECRET"],
     scope: 'email',
@@ -27,8 +27,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'ben.m.chavez@gmail.com'
-  # noreply@borderlinebasicb.com
+  config.mailer_sender = 'noreply@borderlinebasicb.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

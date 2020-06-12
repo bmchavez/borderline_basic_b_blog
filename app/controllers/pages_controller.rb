@@ -13,3 +13,13 @@ class PagesController < ApplicationController
     @posts = policy_scope(Post).order(created_at: :desc)
   end
 end
+
+
+# SEB USED THE FOLLOWING IN HIS MAILER TUTORIAL
+
+# class PagesController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:home]
+
+  # def home
+  # end
+# end
