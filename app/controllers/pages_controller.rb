@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     @content = 'This your Dashboard!'
     @posts = policy_scope(Post).order(created_at: :desc)
     # # @post = Post.find(params[:id])
-
+    # @page = 
     # authorize @page
   end
   
