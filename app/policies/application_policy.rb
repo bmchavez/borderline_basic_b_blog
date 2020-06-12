@@ -6,6 +6,10 @@ class ApplicationPolicy
     @record = record
   end
 
+  def admin?
+    user.try(:admin?)
+  end
+
   def index?
     false
   end

@@ -5,15 +5,14 @@ class PagePolicy < ApplicationPolicy
     end
   end
 
-  def dashboard
-    user_is_admin?
-  end
+  # def dashboard
+  #   true
+  # end
 
-  private
+  # private
 
-  def user_is_admin?
-    user.try(:admin?)
-  end
-
-
+  # def user_is_admin?
+  #   user.try(:admin?)
+  # end
+  
 end
