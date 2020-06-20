@@ -57,6 +57,36 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+  .main-header {
+  padding-top: 46px;
+  // padding-bottom: 110px;
+}
+
+.title {
+  font-family: $title-font;
+  font-size: 60px;
+  line-height: 108px;
+  text-decoration: none;
+  color:#222222;
+
+  &:hover {
+    text-decoration: none;
+    color:#222222;
+  }
+}
+
+.sub-title {
+  font-family: $sub-title-font;
+  font-size: 11px !important;
+  line-height: 24px;
+  font-weight: 300;
+  letter-spacing: 0.26px;
+  color:#222222;
+}
+
+.banner-padding{
+  padding-top: 110px;
+}
   </style>
 </head>
 
@@ -67,7 +97,7 @@
       <div class="row">
         <div class="col">
           <div class="text-center">
-            <h1 class="m-0"><%= link_to 'Borderline Basic', home_path, {:class => "title"}  %></h1>
+            <h1 class="m-0 title">Borderline Basic</h1>
           </div>
         </div>
       </div>
@@ -83,7 +113,7 @@
   <div class="dialog">
     <div>
       <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      <!-- <p>You may have mistyped the address or the page may have moved.</p> -->
     </div>
   </div>
 </body>
