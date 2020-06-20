@@ -1,55 +1,106 @@
 <%= render "shared/banner" %>
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
+<div class="row d-flex justify-content-center">
+  <div class="col-sm-12 col-md-8 col-lg-7">
+    <div class="form-login">
+      <h2 class="text-center pt-3">My Account</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+        <div class="form-inputs">
+          <div class="row">
+            <!-- <div class="col-6">
+              <% avatar_url = current_user.facebook_picture_url || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" %>
+              <% if current_user.avatar.attached? %>
+                <%= cl_image_tag current_user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar-large" %>
+              <% else %>
+                <%=  image_tag "default_avatar.png", class: "avatar-large" %>
+              <% end %>
+            </div> -->
+            <div class="image-upload col d-flex justify-content-center">
+              <label for="file-input" class="btn-background">
+                <span class="btn-background">
+                  <i class="fas fa-camera"></i>
+                  
+                  <span class="avatar-upload-btn">
+                    <% avatar_url = current_user.facebook_picture_url || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" %>
+                    <% if current_user.avatar.attached? %>
+                      <%= cl_image_tag current_user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar-large" %>
+                    <% else %>
+                      <%=  image_tag "default_avatar.png", class: "avatar-large" %>
+                    <% end %>
+                  </span>
+                </span>
+              </label>
 
-  <div class="form-inputs">
-    <% avatar_url = current_user.facebook_picture_url || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" %>
-    <% if current_user.avatar.attached? %>
-      <%= cl_image_tag current_user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar-large" %>
-    <% else %>
-      <%=  image_tag "default_avatar.png", class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <% end %>
-    <%= f.file_field :avatar %>
-    <%= f.input :email, required: true, autofocus: true %>
+              <%= f.file_field :avatar, id:"file-input" %>
+            </div>
+          </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
 
-    <%= f.input :first_name,
-                label: false,
-                placeholder: "First name",
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "first name" }%>
-    <!-- <%= f.input :avatar, as: :file, direct_upload: true %> -->
-    <%= f.input :password,
-                label: false,
-                placeholder: "New Password",
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+
+
+
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+          <div class="row pt-3">
+            <div class="col-6">
+              <%= f.input :first_name,
+                          label: false,
+                          placeholder: "First name",
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "first name" }%>
+            </div>
+            <div class="col-6">
+              <%= f.input :last_name,
+                          label: false,
+                          placeholder: "Last name",  
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "last name" }%>
+            </div>  
+          </div>
+          <%= f.input :email,
+                    placeholder: "Email",
+                    label: false,          
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      label: false,
+                      placeholder: "New Password",
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :current_password,
+                      hint: "we need your current password to confirm your changes",
+                      required: true,
+                      input_html: { autocomplete: "current-password" } %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Update", :class => "btn btn-primary" %>
+        </div>
+        
+      <% end %>
+
+      <!-- <h3>Cancel my account</h3> -->
+      <div class="row d-flex small-form-actions">
+        <div class="col">
+          <p class="text-right"><%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: " delete-account-btn" %></p>
+        </div>
+      </div>
+
+      <!-- <%= link_to "Back", :back %> -->
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
 
 
 
@@ -57,12 +108,11 @@
 
 
 
-
-
+<!-- 
 <div class="row d-flex justify-content-center">
   <div class="col-sm-12 col-md-8 col-lg-5">
     <div class="form-login">
-      <h2 class="text-center pt-3">Sign up</h2>
+      <h2 class="text-center pt-3">My Account</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
       <div class="form-inputs">
@@ -114,6 +164,4 @@
     </div>
   </div>
 </div>
-
-
 
