@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get 'users/index'
+  get 'users/index'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about', as: 'about'
   get 'dashboard' => 'pages#dashboard', as: 'dashboard'
 
+  resources :users, only: [:show, :update]
   resources :posts do 
     resources :comments
   end

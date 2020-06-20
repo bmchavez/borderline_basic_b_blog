@@ -5,11 +5,24 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_one_attached :avatar
   validates_presence_of :first_name, :last_name
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
+
+  after_commit :add_default_avatar, on: %i[create update]
+
+
+  def avatar_thumbnail
+    if avatar.attached?
+      avatar
+      # avatar.variant(resize: "150x150!").processed
+    else
+      "/Profile_avatar_placeholder_large.png"
+    end
+  end
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice("provider", "uid")
@@ -34,6 +47,20 @@ class User < ApplicationRecord
 
 
   private
+
+  def add_default_avatar
+    unless avatar.attached?
+      avatar.attach(
+        io: File.open(
+          Rails.root.join(
+            'app', 'assets', 'images', 'default_avatar.png'
+          )
+        ), filename: 'default_avatar.png',
+        content_type: 'image/jpg'
+      )
+    end
+  end
+
 
   def send_welcome_email
     UserMailer.with(user: self).welcome.deliver_now

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :edit, :update]
   
   def index
     @users = User.all
@@ -8,8 +8,26 @@ class UsersController < ApplicationController
 
   def show
     set_user
-    # @user.email = user.email
+    @user = current_user
     authorize @user
+  end
+
+  def edit
+    # set_user
+    @user = current_user
+    authorize @user
+  end
+
+  def update
+    # set_user
+    @user = current_user
+    authorize @user
+
+    # if(@comment.update(comment_params))
+    #   redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
+    # else
+    #   render 'comments/_edit'
+    # end
   end
 
   private
@@ -20,6 +38,6 @@ class UsersController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:first_name, :last_name, :email, :avatar)
   end
 end
