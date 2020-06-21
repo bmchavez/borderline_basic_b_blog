@@ -1,0 +1,46 @@
+.delete-account-btn {
+  color: $light-gray !important;
+}
+
+.avatar-upload-btn:hover{
+  opacity: 0.5;
+  // background: red !important;
+
+
+}
+
+.btn-background {
+  // background: red !important;
+  border-radius: 50%;
+  // background: url('camera-icon.png');
+  // background-repeat: no-repeat;
+  // background-size: auto;
+    &:hover .fa-camera{
+      color: black; 
+      opacity: 1;
+  }
+}
+
+
+.fa-camera{
+  position: absolute;
+  padding-top: 42px; 
+  padding-left: 41.9px;
+  opacity: 0;
+}
+
+.image-upload > input
+{
+   display: none;
+}
+.image-upload > label{
+  cursor:pointer;
+}
+
+abbr[title="required"] {
+  display: none;
+}
+
+label{
+  font-weight: bold;
+}
