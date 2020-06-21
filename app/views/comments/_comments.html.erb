@@ -11,7 +11,12 @@
         <div class="option-icon-div"></div>
         <div class="comment-body"  style="width: 100%">
           <div class="row d-flex">
-            <p class="col-6 comment-user"><%= comment.user.first_name %> <%= comment.user.last_name %></p>
+            
+            <p class="col-6 comment-user">
+              <%= cl_image_tag comment.user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar" %>
+              <%= comment.user.first_name %> <%= comment.user.last_name %>
+              
+            </p>
             <p class="col-6 post-date text-right" ><%=  comment.created_at.strftime("%b %d, %Y") %></p>
           </div>
           <div class="row d-flex">
