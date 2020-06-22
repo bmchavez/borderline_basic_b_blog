@@ -11,20 +11,29 @@
         <div class="option-icon-div"></div>
         <div class="comment-body"  style="width: 100%">
           <div class="row d-flex">
+            <div class="col-12">
+              <div>
+                <div class="d-inline-block m-0 align-top">
+                  <%= cl_image_tag comment.user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar" %>
+                </div>
+                <div class="d-inline-block m-0 pl-1">
+                  <p class="comment-user m-0">
+                    <%= comment.user.first_name %> <%= comment.user.last_name %>
+                  </p>
+                  <p class="post-date m-0">
+                    <%=  comment.created_at.strftime("%b %d, %Y") %>
+                  </p>
+                </div>
+              </div>
+            </div>
             
-            <p class="col-6 comment-user">
-              <%= cl_image_tag comment.user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar" %>
-              <%= comment.user.first_name %> <%= comment.user.last_name %>
-              
-            </p>
-            <p class="col-6 post-date text-right" ><%=  comment.created_at.strftime("%b %d, %Y") %></p>
+            <!-- <p class="col-6 post-date text-right" ><%=  comment.created_at.strftime("%b %d, %Y") %></p> -->
           </div>
-          <div class="row d-flex">
-            <p class="col-12 comment-text"><%= comment.body %></p>
+          <div class="row d-flex mt-3 pl-1">
+            <p class="col-12 comment-text mb-0"><%= comment.body %></p>
           </div> 
         </div>
         <div class="option-icon-div">
-          
             <div class="dropdown show d-flex align-items-center""  style="height: 100%; width: 100%">
               <% if policy(comment).edit? || policy(comment).destroy? %>
                 <div class="dropdown-icon ">
@@ -37,8 +46,8 @@
                       <%= link_to [comment.post, comment], :class => 'dropdown-item' do %>
                         <i class="fas fa-edit"></i>
                         Edit
-                      <% end %> -->
-                    <% end %>
+                      <% end %>
+                    <% end %> -->
                     <% if policy(comment).destroy? %>
                       <%= link_to [comment.post, comment], method: :delete, remote: true, data: {confirm: 'Are you sure you would like to delete your comment?'}, :class => 'dropdown-item' do %>
                         <i class="fas fa-trash"></i>
@@ -49,19 +58,8 @@
                   </div>
                 </div>
                 <% end %>
-            </div>
-          
+            </div>         
         </div>
-
-
-
-
-
-
-
-
-
-
       </div>
     </div>
   </div>
