@@ -1,15 +1,25 @@
-
-<%= form_for([@post, @comment], remote: true) do |f| %>
-  <div class="mb-2">
-    <%= f.text_area(:body, :placeholder => "Add a Comment!", :class => 'form-control') %>
-  </div>
-  <div class="row px-3 pb-3">
-      <div class="ml-auto">
-        <%= f.submit("Comment", {:class => 'btn btn-outline-primary bb-btn-comment'}) %>
-      </div>
-  </div>
+<% if user_signed_in? %>
+  <%= form_for([@post, @comment], remote: true) do |f| %>
+    <div class="mb-2">
+      <%= f.text_area(:body, :placeholder => "Add a Comment!", :class => 'form-control') %>
+    </div>
+    <div class="row px-3 pb-3">
+        <div class="ml-auto">
+          <%= f.submit("Comment!", {:class => 'btn btn-outline-primary bb-btn-comment'}) %>
+        </div>
+    </div>
+  <% end %>
+<% else %>
+  <%= form_for([@post, @comment], remote: true) do |f| %>
+    <div class="mb-2">
+      <%= f.text_area(:body, :placeholder => "Login to Comment!!", :class => 'form-control') %>
+    </div>
+    <div class="row px-3 pb-3">
+        <div class="ml-auto">
+          <%= link_to "Login!", user_session_path , {:class => 'btn btn-outline-primary bb-btn-comment'} %>
+        </div>
+    </div>
+  <% end %>
 <% end %>
-
-
 
 <!-- <%= @user.email %> -->

@@ -26,7 +26,6 @@ class CommentsController < ApplicationController
     
     if @comment.save
       redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
-      
     else
       # redirect_to post_path(@post, anchor: "comments")
       redirect_to home_path
