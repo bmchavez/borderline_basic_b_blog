@@ -16,7 +16,9 @@ class User < ApplicationRecord
 
 
   def avatar_thumbnail
-    if avatar.attached?
+    if current_user.facebook_picture_url?
+      current_user.facebook_picture_url
+    elsif avatar.attached?
       avatar
       # avatar.variant(resize: "150x150!").processed
     else
