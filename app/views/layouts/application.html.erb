@@ -10,7 +10,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= javascript_include_tag Ckeditor.cdn_url %>
-    
+    <%= auto_discovery_link_tag :rss, posts_url(:format => :rss) %>
     
   </head>
 
