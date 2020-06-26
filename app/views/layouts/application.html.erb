@@ -11,9 +11,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= javascript_include_tag Ckeditor.cdn_url %>
     
+    
   </head>
 
-  <body>
+  <body data-turbolinks="false">
     <div class="content">
       <%= render "shared/navbar" %>
       <%= render 'shared/flashes' %>
