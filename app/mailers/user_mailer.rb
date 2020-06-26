@@ -4,11 +4,11 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  # def welcome
-  #   @user = params[:user] # Instance variable => available in view
-  #   mail(to: @user.email, subject: "Welcome to Borderline Basic B****!")
-  #   # This will render a view in `app/views/user_mailer`!
-  # end
+  def welcome
+    @user = params[:user] # Instance variable => available in view
+    mail(to: @user.email, subject: "Welcome to Borderline Basic B****!")
+    # This will render a view in `app/views/user_mailer`!
+  end
 end
 
 
