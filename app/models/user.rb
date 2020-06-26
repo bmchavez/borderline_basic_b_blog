@@ -19,6 +19,8 @@ class User < ApplicationRecord
     if avatar.attached?
       avatar
       # avatar.variant(resize: "150x150!").processed
+    elsif
+      #
     else
       "/Profile_avatar_placeholder_large.png"
     end
