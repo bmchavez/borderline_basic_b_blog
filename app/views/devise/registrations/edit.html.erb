@@ -9,21 +9,25 @@
         <div class="form-inputs">
           <div class="row pb-4">
             <div class="image-upload col d-flex justify-content-center">
-              <label for="file-input" class="btn-background">
-                <i class="fas fa-camera"></i>
-                <span class="btn-background">
-                  <span class="avatar-upload-btn">
-                    
-                    <% avatar_url = current_user.facebook_picture_url || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" %>
-                    <% if current_user.avatar.attached? %>
-                      <%= cl_image_tag current_user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar-large" %>
-                    <% else %>
-                      <%=  image_tag "default_avatar.png", class: "avatar-large" %>
-                    <% end %>
-                  </span>
+              <% if current_user.facebook_picture_url? %>
+                <span class="fb-avatar">
+                  <%= image_tag current_user.facebook_picture_url, class: "avatar-large fb-avatar"  %>
                 </span>
-              </label>
-              <%= f.file_field :avatar, id:"file-input" %>
+              <% else %>
+                <label for="file-input" class="btn-background">
+                  <i class="fas fa-camera"></i>
+                  <span class="btn-background">
+                    <span class="avatar-upload-btn">
+                      <% if current_user.avatar.attached? %>
+                        <%= cl_image_tag current_user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar-large" %>
+                      <% else %>
+                        <%=  image_tag "default_avatar.png", class: "avatar-large" %>
+                      <% end %>
+                    </span>
+                  </span>
+                </label>
+                <%= f.file_field :avatar, id:"file-input" %>
+              <% end %>
             </div>
           </div>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

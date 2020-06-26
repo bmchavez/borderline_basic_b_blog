@@ -14,8 +14,12 @@
             <div class="col-12">
               <div>
                 <div class="d-inline-block m-0 align-top">
-                  <%= cl_image_tag comment.user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar" %>
-                </div>
+                  <% if comment.user.facebook_picture_url? %>
+                    <%= image_tag comment.user.facebook_picture_url, class: "avatar"  %>
+                  <% else %>
+                    <%= cl_image_tag comment.user.avatar.key, transformation: [{width: 1000, height: 1000, gravity: "face", radius: "max", crop: "crop"}, {width: 200, crop: "scale"}],class: "avatar" %>
+                  <% end %>
+                  </div>
                 <div class="d-inline-block m-0 pl-1">
                   <p class="comment-user m-0">
                     <%= comment.user.first_name %> <%= comment.user.last_name %>

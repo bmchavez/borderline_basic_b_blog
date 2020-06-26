@@ -15,17 +15,6 @@ class User < ApplicationRecord
   after_commit :add_default_avatar, on: %i[create update]
 
 
-  def avatar_thumbnail
-    if current_user.facebook_picture_url?
-      current_user.facebook_picture_url
-    elsif avatar.attached?
-      avatar
-      # avatar.variant(resize: "150x150!").processed
-    else
-      "/Profile_avatar_placeholder_large.png"
-    end
-  end
-
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice("provider", "uid")
     user_params.merge! auth.info.slice("email", "first_name", "last_name")
@@ -47,6 +36,16 @@ class User < ApplicationRecord
     return user
   end
 
+  def avatar_thumbnail
+    if current_user.facebook_picture_url?
+      current_user.facebook_picture_url
+    elsif avatar.attached?
+      avatar
+      # avatar.variant(resize: "150x150!").processed
+    else
+      "/Profile_avatar_placeholder_large.png"
+    end
+  end
 
   private
 
