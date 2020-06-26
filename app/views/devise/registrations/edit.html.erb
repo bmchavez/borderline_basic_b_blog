@@ -11,7 +11,7 @@
             <div class="image-upload col d-flex justify-content-center">
               <% if current_user.facebook_picture_url? %>
                 <span class="fb-avatar">
-                  <%= image_tag current_user.facebook_picture_url, class: "avatar-large fb-avatar"  %>
+                  <%= image_tag current_user.facebook_picture_url, class: "avatar-large fb-avatar" + "?type=large" %>
                 </span>
               <% else %>
                 <label for="file-input" class="btn-background">
