@@ -7,7 +7,7 @@ class NewPostMailer < ApplicationMailer
   
     @users = User.all
   #   emails = @users.collect(&:email).join(", ")
-    mail(bcc: ___, subject: "13yayayaBorderline Basic B**** Has a New Post!")
+    mail(bcc: ["ben.m.chavez@gmail.com", "rosadj.music@gmail.com", "aminchavez.music@gmail.com"], subject: "13yayayaBorderline Basic B**** Has a New Post!")
   
 
   # @gibbon = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
