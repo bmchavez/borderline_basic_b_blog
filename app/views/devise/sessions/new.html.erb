@@ -18,7 +18,7 @@
                     placeholder: "Password",
                     input_html: { autocomplete: "current-password" } %>
         <div class="row d-flex small-form-actions">
-          <span class="col-6"><%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></span>
+          <span class="col-6 "><%= f.input :remember_me, class: "bg-primary", as: :boolean if devise_mapping.rememberable? %></span>
           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
             <span class="col-6 text-right"><%= link_to "Forgot password?", new_password_path(resource_name) %></span>
           <% end %>
