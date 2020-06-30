@@ -41,11 +41,15 @@
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" } %>
         <div class="row d-flex small-form-actions">
-          <span class="col-6"><%= f.check_box :subscribed %> 
-          <label class="form-check-label align-text-bottom" for="defaultCheck1">
-            Subscribe
-          </label>
-        </span>
+          <span class="col-6">
+            <fieldset class="form-group">
+              <div class="form-check d-inline p-0 align-middle"><%= f.check_box :subscribed, :class => "align-middle" %></div>
+              <label class="form-check-label subscribe-label d-inline" for="defaultCheck1">
+                Subscribe
+              </label>
+                
+            </fieldset>
+          </span>
         </div>
       </div>
       <div class="form-actions">
