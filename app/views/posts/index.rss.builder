@@ -1,8 +1,8 @@
 xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "Borderline Basic B****"
-    xml.description "The chronicles of a Borderline Basic B*tch"
+    xml.title "My Company Blog"
+    xml.description "This is a blog by My Company"
     xml.link home_path
 
     @posts.each do |post|
@@ -15,4 +15,4 @@ xml.rss :version => "2.0" do
       end
     end
   end
-endb
+end
