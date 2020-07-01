@@ -34,8 +34,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       # authorize @user
       super ?
       #   set_user
-        update_mailchimp_user
-      end
+      #   update_mailchimp_user
+      # end
         
       #   # update_mailchimp_user
       
