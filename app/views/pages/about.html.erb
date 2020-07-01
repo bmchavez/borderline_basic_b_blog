@@ -1,2 +1,150 @@
-<h1><%= @title %></h1>
-<p><%= @content %></p>
+<!-- <h1><%= @title %></h1>
+<p><%= @content %></p> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>Document</title> -->
+  <style>
+    body {
+      letter-spacing: 0.2px;
+      word-break: break-word;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    h1 {
+      font-weight: 500;
+      display: block;
+      margin-block-start: 0.67em;
+      margin-block-end: 0.67em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      color: red;
+    }
+    .title {
+      font-family: "Cormorant Garamond", "serif";
+      font-size: 60px;
+      line-height: 108px;
+      text-decoration: none;
+      color: #222222;
+    }
+    .m-0 {
+      margin: 0 !important;
+    }
+    .text-center {
+      text-align: center ;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="">
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+            <h1 class="m-0 title">Borderline Basic</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <div class="text-center sub-title ">
+            <p class="m-0">The chronicles of a Borderline Basic B*tch</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <p>Hello <%= @user.first_name %>,</p>
+
+    <p>Borderline Basic B**** has a new blog post!!</p>
+
+    <%= link_to "Check it out!", home_url, class: 'btn bb-btn btn-sm btn-primary' %>
+  </section>
+
+  <footer id="main-footer" class="mt-5 pt-5 pb-5">
+    <hr>
+    <div class="pt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="text-center pt-3 sub-title">
+              All rights reserved &copy; <span id="year"></span>  Borderline Basic</p>
+              <p class="text-center sub-title p-0 m-0">Copyright © 2020 Borderline Basic B, All rights reserved.</p>
+              <p class="text-center sub-title p-0 m-0">You signed up at borderlinebasicb.com!</p>
+              <br>
+              <p class="text-center sub-title p-0 m-0">Want to change how you receive these emails?</p>
+              <p class="text-center sub-title p-0 m-0">You can update your preferences or unsubscribe from this list.</p>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>Hello <%= @user.first_name %>,</p>
+
+<p>Nice to meet you. I hope you enjoy the blog!!</p>
+
+<%= link_to "Get back to the blog!", home_url %> -->
