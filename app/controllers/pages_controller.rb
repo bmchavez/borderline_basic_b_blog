@@ -12,6 +12,10 @@ class PagesController < ApplicationController
   def dashboard
     @posts = policy_scope(Post).order(created_at: :desc)
   end
+
+  def newest_post
+    redirect_to post_path(Post.last) and return
+  end
 end
 
 

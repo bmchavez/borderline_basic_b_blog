@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'users/index'
 
   devise_for :users,
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
 
   # resources :users, only: [:show] do
   #   resources :comments
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about', as: 'about'
   get 'dashboard' => 'pages#dashboard', as: 'dashboard'
+  get 'newest_post' => 'pages#newest_post', as: 'newest_post'
+ 
 
   resources :users, only: [:show, :update]
   resources :posts do 
