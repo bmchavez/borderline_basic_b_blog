@@ -32,7 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # if policy(@user).update?
       # update_mailchimp_user
       # authorize @user
-      super ?
+      super
       #   set_user
       #   update_mailchimp_user
       # end
