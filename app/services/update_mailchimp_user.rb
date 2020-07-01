@@ -1,4 +1,4 @@
-# class UpdateMailChimpUser
+class UpdateMailChimpUser
 #   def update_mailchimp_userr
 #     set_user
 #     @user = current_user
@@ -26,4 +26,4 @@
 #   def set_user
 #     @user ||= ((User.find(session[:user_id]) if session[:user_id]) || User.new)
 #   end
-# end
+end
