@@ -27,12 +27,14 @@ User.create!({
 Post.create!({
   title: "001.",
   body: "This is the first blog post",
-  user_id: 2
+  user_id: 2,
+  publish_date: Time.now
 })
 Post.create!({
   title: "002.",
   body: "This is the SECOND blog post",
-  user_id: 2
+  user_id: 2,
+  publish_date: Time.now
 })
 
 puts 'Finished!'

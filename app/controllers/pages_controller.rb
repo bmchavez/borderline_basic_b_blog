@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @posts = policy_scope(Post).order(created_at: :desc)
+    @posts = policy_scope(Post).order(publish_date: :desc)
   end
 
   def newest_post

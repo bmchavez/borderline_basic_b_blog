@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :subscribe_to_newsletter
+  # after_create :subscribe_to_newsletter
   # after_create :send_welcome_email
 
   # Include default devise modules. Others available are:

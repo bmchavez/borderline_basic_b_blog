@@ -16,9 +16,14 @@
     <%= f.cktext_area(:body, {:class => 'form-control'}) %>
   </p>
   <div class="row">
-    <div class="col">
-      <p class="text-right">
-        <%= f.submit "Publish!", class: 'btn btn-primary'  %>
+    <div class="col text-right">
+      <p class="d-inline">
+        <%= f.submit "Publish!", class: 'btn btn-outline-primary', :name => "publish"  %>
+      </p>
+    <!-- </div>
+    <div class="col"> -->
+      <p class="d-inline">
+        <%= f.submit "Save Draft!", class: 'btn btn-primary', :name => "draft"  %>
       </p>
     </div>
   </div>

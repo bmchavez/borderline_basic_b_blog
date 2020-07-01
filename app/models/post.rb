@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   after_create :send_new_post_email
+  after_update :send_new_post_email
 
   belongs_to :user
   has_many :comments, dependent: :destroy
@@ -9,7 +10,9 @@ class Post < ApplicationRecord
   
   def send_new_post_email
     # NewPostMailer.with(@users).new_post.deliver_now
-    NewPostMailer.with(self: user).new_post.deliver_now
+    unless self.draft
+      NewPostMailer.with(self: user).new_post.deliver_now
+    end
   end
 
 end
