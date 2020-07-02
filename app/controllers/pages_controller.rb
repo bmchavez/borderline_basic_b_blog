@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   # before_action :set_user, only: [:show]
   # before_action :authenticate_user!
   before_action :admin_authenticate, only: [:dashbord]
+  before_action :skip_authorization, only: [:newest_post]
+  skip_before_action :authenticate_user!, only: [:newest_post]
 
   def about
     @title = 'About Us'
