@@ -68,6 +68,7 @@ class PostsController < ApplicationController
       if @post.draft?
         @post.write_attribute(:draft, false)
         set_publish_date
+        send_new_post_email
       end
       authorize @post
     end
@@ -104,7 +105,11 @@ class PostsController < ApplicationController
     @post.write_attribute(:publish_date, Time.now)
   end
 
-
+  def send_new_post_email
+    # unless self.draft
+      UserMailer.new_post_request
+    # end
+  end
 
 end
 

@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   after_create :send_new_post_email
-  after_update :send_new_post_email
+  # after_update :send_new_post_email
 
   belongs_to :user
   has_many :comments, dependent: :destroy

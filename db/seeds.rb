@@ -14,6 +14,7 @@ User.create!({
   last_name: 'Webb',
   email: 'briannawebb@email.com',
   password: 'Benlovesme!'
+  admin: true
 })
 User.create!({
   first_name: 'Ben',
