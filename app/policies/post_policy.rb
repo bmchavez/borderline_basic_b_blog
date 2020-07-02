@@ -32,7 +32,9 @@ class PostPolicy < ApplicationPolicy
   end
 
   def check_if_published
-    if record.draft?
+    if user_is_owner_or_admin?
+      return true
+    elsif record.draft?
       return false
     else
       return true
