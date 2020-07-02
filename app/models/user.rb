@@ -50,16 +50,16 @@ class User < ApplicationRecord
   private
 
   def add_default_avatar
-    unless avatar.attached?
-      avatar.attach(
-        io: File.open(
-          Rails.root.join(
-            'app', 'assets', 'images', 'default_avatar.png'
-          )
-        ), filename: 'default_avatar.png',
-        content_type: 'image/jpg'
-      )
-    end
+    # unless avatar.attached?
+    #   avatar.attach(
+    #     io: File.open(
+    #       Rails.root.join(
+    #         'app', 'assets', 'images', 'default_avatar.png'
+    #       )
+    #     ), filename: 'default_avatar.png',
+    #     content_type: 'image/jpg'
+    #   )
+    # end
   end
 
   # def send_welcome_email
