@@ -13,13 +13,13 @@ User.create!({
   first_name: 'Bri',
   last_name: 'Webb',
   email: 'briannawebb@email.com',
-  password: '123456'
+  password: 'Benlovesme!'
 })
 User.create!({
   first_name: 'Ben',
   last_name: 'Chavez',
   email: 'ben.m.chavez@gmail.com',
-  password: '123456',
+  password: 'Firstcodingproject!',
   admin: true
 })
 

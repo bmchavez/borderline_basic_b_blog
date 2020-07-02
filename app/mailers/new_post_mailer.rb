@@ -1,4 +1,4 @@
-# class NewPostMailer < ApplicationMailer
+class NewPostMailer < ApplicationMailer
 #   def new_post
 #     # # @post.user = params[:post] # Instance variable => available in view
 #     # mail(to: "ben.m.chavez@gmail.com", subject: "Borderline Basic B**** Has a New Post!")
@@ -14,6 +14,6 @@
 #   # @gibbon.lists(@audience_id).members.retrieve(params: {"fields": "members.email_address"})
 #   end
 
-# end
+end
 
 
