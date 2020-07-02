@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show] 
   before_action :set_user, only: [:show]
+  # before_action :check_if_published, only: [:show]
 
   def index
     @posts = policy_scope(Post).order(publish_date: :desc)
@@ -102,6 +103,8 @@ class PostsController < ApplicationController
   def set_publish_date
     @post.write_attribute(:publish_date, Time.now)
   end
+
+
 
 end
 

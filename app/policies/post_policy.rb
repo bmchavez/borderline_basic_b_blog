@@ -10,7 +10,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+    check_if_published
   end
 
   def create?
@@ -29,6 +29,14 @@ class PostPolicy < ApplicationPolicy
 
   def user_is_owner_or_admin?
     record.user == user || user.try(:admin?)
+  end
+
+  def check_if_published
+    if record.draft?
+      return false
+    else
+      return true
+    end
   end
 
 end
