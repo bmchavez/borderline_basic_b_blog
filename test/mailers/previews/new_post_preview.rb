@@ -8,7 +8,7 @@ class NewPostPreview < ActionMailer::Preview
   def new_post
     user = User.first
     
-    UserMailer.with(user: user).new_post
+    NewPostMailer.with(user: user).new_post
   end
 end
 

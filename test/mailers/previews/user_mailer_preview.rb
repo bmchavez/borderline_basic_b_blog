@@ -6,11 +6,11 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.with(user: @user).welcome
   end
 
-  # def new_post
-  #   user = User.first
+  def new_post
+    user = User.first
     
-  #   UserMailer.with(user: user).new_post
-  # end
+    UserMailer.with(user: user).new_post
+  end
 end
 
 

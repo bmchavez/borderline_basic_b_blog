@@ -9,9 +9,8 @@ class Post < ApplicationRecord
   private
   
   def send_new_post_email
-    # NewPostMailer.with(@users).new_post.deliver_now
     unless self.draft
-      NewPostMailer.with(self: user).new_post.deliver_now
+      UserMailer.new_post_request
     end
   end
 
