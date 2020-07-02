@@ -18,7 +18,8 @@ class PagesController < ApplicationController
 
   def newest_post
     # @post = P
-    redirect_to post_path(Post.last) and return
+    @published_posts = Post.where(:draft => false).all.order(publish_date: :desc)
+    redirect_to post_path(@published_posts.first) and return
     # authorize
     
   end
