@@ -1,8 +1,9 @@
 class UserMailerPreview < ActionMailer::Preview
   def welcome
-    user = User.first
+    @user = User.first
+    # @post = policy_scope(Post).order(publish_date: :desc).last.title
     
-    UserMailer.with(user: user).welcome
+    UserMailer.with(user: @user).welcome
   end
 
   # def new_post
