@@ -1,7 +1,23 @@
-<h4>Unsubscribe from Mysite Emails</h4>
-<p>By unsubscribing, you will no longer receive email...</p>
-<%= form_for(@user, url: settings_update_path(id: @user.id)) do |f| %>
-  <%= f.hidden_field(:subscribed, value: false) %>
-  <%= f.submit 'Unsubscribe' %>
-  <%= link_to 'Cancel', home_path %>
-<% end %>
+<%= render "shared/banner" %>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-sm-12 col-md-8 col-lg-5">
+    <div class="form-login">
+      <h2 class="text-center pt-3 pb-0 mb-1">Unsubscribe </h2>
+      <div class="">
+        <div class="post-text mb-5 text-center">
+          <p class="pt-0 mt-0">By unsubscribing, you will no longer receive emails...</p>
+          <%= form_for(@user, url: settings_update_path(id: @user.id)) do |f| %>
+            <%= f.hidden_field(:subscribed, value: false) %>
+            <div class="row mt-4">
+              <div class="col mt-2">
+                <%= f.submit 'Unsubscribe', class: "btn btn-outline-primary" %>
+                <%= link_to 'Cancel', home_path, class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
