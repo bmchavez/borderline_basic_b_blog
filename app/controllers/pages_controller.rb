@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show] 
   # before_action :set_user, only: [:show]
   # before_action :authenticate_user!
-  before_action :admin_authenticate
+  before_action :admin_authenticate, only: [:dashbord]
 
   def about
     @title = 'About Us'
@@ -15,7 +15,10 @@ class PagesController < ApplicationController
   end
 
   def newest_post
+    # @post = P
     redirect_to post_path(Post.last) and return
+    # authorize
+    
   end
 end
 

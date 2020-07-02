@@ -5,9 +5,9 @@ class PagePolicy < ApplicationPolicy
     end
   end
 
-  # def dashboard
-  #   true
-  # end
+  def newest_post?
+    return true
+  end
 
   # private
 

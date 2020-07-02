@@ -242,7 +242,6 @@
 			font-family: Arial, Helvetica, sans-serif;
 			font-size: 16px;
 			line-height: 24px;
-			text-decoration: none solid rgb(106, 120, 169);
 			text-align: center;
 			vertical-align: middle;
 			white-space: pre;
@@ -256,9 +255,10 @@
 			display: inline-block;
 			cursor: pointer;
 			transform: none;
-			text-decoration: none !important;
+			text-decoration: none;
 			box-sizing: border-box;
 			border-radius: 50px;
+			text-decoration: none solid rgb(106, 120, 169);
 		}
 
 		.borderline-title {
@@ -482,7 +482,7 @@
 																	
 																	<div style="text-align: center;">Hey <%= @name %>,<br>
 																		<br>
-																		My new post&nbsp;sdf is out now!</div>
+																		My new post&nbsp; is out now!</div>
 																		<br>
 																		<br>
 																		<br>
@@ -503,7 +503,7 @@
 															<tbody>
 																<tr>
 																	<td align="center" valign="middle" class="mcnButtonContent" style="font-family: Helvetica;font-size: 0px;padding: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-																		<a class="btn" title="Read Post!" href="https://borderlinebasicb.com/newest_post" target="_blank" >Read Post!</a>
+																		<a class="btn" title="Read Post!" href="https://borderlinebasicb.com/newest_post" target="_blank" style="color: #FFFFFF; text-decoration: none;" >Read Post!</a>
 																	</td>
 																</tr>
 															</tbody>
@@ -674,11 +674,10 @@
 						<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #222222;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;font-size: 12px;line-height: 150%;text-align: center;">
 							
 							<em>All rights reserved © <%= Time.now.strftime("%Y") %> Borderline Basic</em><br>
-							You signed up at borderlinebasicb.com!<br>
+							You signed up at <a href="https://borderlinebasicb.com/newest_post" target="_blank" style="text-decoration: underline; color: #222222;" >borderlinebasicb.com</a>!<br>
 							<br>
 							Want to change how you receive these emails?<br>
 							You can <a href="https://borderlinebasicb.com/users/edit"target="_blank"  style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #222222;font-weight: normal;text-decoration: underline;">update your preferences</a> or <a href="*|UNSUB|*" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #222222;font-weight: normal;text-decoration: underline;">unsubscribe from this list</a>.<br>
-							<!-- <a class="btn" title="Read Post!" href="https://borderlinebasicb.com/newest_post" target="_blank" >Read Post!</a> -->
 							<br>
 							
 						</td>
