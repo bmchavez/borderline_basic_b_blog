@@ -9,8 +9,11 @@
   integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
   crossorigin="anonymous"
 />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
+
   <style>
-  .rails-default-error-page {
+  /* .rails-default-error-page {
     background-color: #FFFFFF;
     color: #2E2F30;
     text-align: center;
@@ -56,32 +59,73 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  } */
 
   .main-header {
-  padding-top: 46px;
-  }
+    padding-top: 46px;
+    padding-bottom: 75px;
+}
+
+.title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 108px;
+  text-decoration: none solid rgb(34, 34, 34);
+  text-align: center;
+  word-spacing: 0;
+  background-color: #FFFFFF;
+  background-position: 0% 0%;
+  color: #222222;
+  display: inline;
   
-  .title {
-    /* font-family: $title-font; */
-    font-size: 60px;
-    line-height: 108px;
+
+  &:hover {
     text-decoration: none;
     color:#222222;
   }
+}
 
-  .sub-title {
-    /* font-family: $sub-title-font; */
-    font-size: 11px !important;
-    line-height: 24px;
-    font-weight: 300;
-    letter-spacing: 0.26px;
-    color:#222222;
-  }
+.title a {
+  text-decoration: none;
+  color: #222222;
+}
 
-  .banner-padding{
-    padding-top: 110px;
-  }
+.sub-title {
+  font-family: serif;
+  font-size: 11px !important;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.26px;
+  color:#222222;
+  display: block;
+}
+
+.banner-padding{
+  padding-top: 110px;
+}
+
+.btn {
+  background-color: #6A78A9 !important;
+	color: #FFFFFF !important;
+  text-decoration: none;
+  border: 1px solid  #6A78A9 !important
+  border: 1px solid  #6A78A9 !important
+}
+.btn:hover {
+  /* background-color: #6A78A9 !important; */
+	color: #FFFFFF !important;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  background-color: #576596 !important;
+}
+
+.btn a {
+  text-decoration: none;
+  border: 1px solid  #6A78A9 !important
+}
+  
   </style>
 </head>
 
@@ -92,7 +136,7 @@
       <div class="row">
         <div class="col">
           <div class="text-center">
-            <h1 class="m-0 title">Borderline Basic</h1>
+            <h1 class="m-0 title"><a href="https://borderlinebasicb.com/">Borderline Basic</a></h1>
           </div>
         </div>
       </div>
@@ -106,9 +150,16 @@
     </div>
   </header>
   <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <!-- <p>You may have mistyped the address or the page may have moved.</p> -->
+    <div class="row">
+      <div class="col">
+        <div class="text-center">
+          <h2>The page you were looking for does not exist.</h2>
+          <div class="container mt-5">
+            <a href="https://borderlinebasicb.com/" class="btn btn-primary">Back to blog!</a>
+          </div>
+          <!-- <p>You may have mistyped the address or the page may have moved.</p> -->
+        </div>
+      </div>
     </div>
   </div>
 </body>
