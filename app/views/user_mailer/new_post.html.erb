@@ -677,7 +677,7 @@
 							You signed up at <a href="https://borderlinebasicb.com/newest_post" target="_blank" style="text-decoration: underline; color: #222222;" >borderlinebasicb.com</a>!<br>
 							<br>
 							Want to change how you receive these emails?<br>
-							You can <a href="https://borderlinebasicb.com/users/edit"target="_blank"  style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #222222;font-weight: normal;text-decoration: underline;">update your preferences</a> or <a href="*|UNSUB|*" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #222222;font-weight: normal;text-decoration: underline;">unsubscribe from this list</a>.<br>
+							You can <a href="https://borderlinebasicb.com/users/edit"target="_blank"  style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #222222;font-weight: normal;text-decoration: underline;">update your preferences</a> or <%= link_to "unsubscribe from this list", settings_unsubscribe_url(id: @unsubscribe), :style => "mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #222222;font-weight: normal;text-decoration: underline;" %>.
 							<br>
 							
 						</td>
@@ -699,3 +699,4 @@
 </center>
 </body>
 </html>
+

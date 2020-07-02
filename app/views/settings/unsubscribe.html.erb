@@ -1,0 +1,7 @@
+<h4>Unsubscribe from Mysite Emails</h4>
+<p>By unsubscribing, you will no longer receive email...</p>
+<%= form_for(@user, url: settings_update_path(id: @user.id)) do |f| %>
+  <%= f.hidden_field(:subscribed, value: false) %>
+  <%= f.submit 'Unsubscribe' %>
+  <%= link_to 'Cancel', home_path %>
+<% end %>
