@@ -20,7 +20,7 @@ class UserMailer < ApplicationMailer
   def new_post(recipient)
     @name = recipient.first_name
     @unsubscribe = Rails.application.message_verifier(:unsubscribe).generate(recipient.id)
-    mail(to: recipient.email, subject: "Borderline Basic B**** Has a New Post!")
+    mail(to: recipient.email, subject: "Borderline Basic B New Post Alert!")
   end
 end
 
